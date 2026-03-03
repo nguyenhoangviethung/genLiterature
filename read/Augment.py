@@ -1,8 +1,11 @@
-import json
+import json 
+import os
 import time
 import google.generativeai as genai
+from dotenv import load_dotenv
+load_dotenv()  
 
-API_KEY = "AIzaSyCMbISntLwU_m3osTnLmfp941vcA61SV14"
+API_KEY = os.getenv("GEMINI_KEY")
 genai.configure(api_key=API_KEY)
 
 model = genai.GenerativeModel('gemma-3-27b-it')
